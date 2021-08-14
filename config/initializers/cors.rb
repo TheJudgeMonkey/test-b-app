@@ -14,4 +14,5 @@ Rails.application.config.middleware.insert_before 0, Rack::Cors do
       expose: ["Authorization"],
       methods: [:get, :patch, :put, :delete, :post, :options, :show]
     )
+  end
 end
