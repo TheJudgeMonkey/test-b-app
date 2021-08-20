@@ -7,8 +7,8 @@ class UsersController < ApplicationController
   end
   
   def show
-    user = User.find(params[:id])
-    render json: { user: user }
+    user = User.find(params[:id]).posts
+    render json: { posts: user }
   end
 
 end
