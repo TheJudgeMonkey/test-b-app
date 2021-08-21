@@ -4,9 +4,10 @@ Rails.application.routes.draw do
   resources :users, only: [:index, :show] do 
     resources :items, only: [:index, :show]
   end
-  resources :posts, only: [:index, :show] do 
-    resources :items, only: [:index, :show] 
- end
+  resources :posts, only: [:index, :show, :update, :destroy, :create] do 
+    resources :items, only: [:index, :show, :update, :destroy, :create]
+  end
+
   devise_for :users, path: '', path_names: {
     sign_in: 'login',
     sign_out: 'logout',
