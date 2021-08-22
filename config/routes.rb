@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
   get 'private/test'
   get '/current_user', to: 'current_user#index'
-  resources :users, only: [:index, :show] do 
-    resources :items, only: [:index, :show]
+  resources :users, only: [:index, :show, :update, :destroy, :create] do 
+    resources :items, only: [:index, :show, :update, :destroy, :create]
   end
   resources :posts, only: [:index, :show, :update, :destroy, :create] do 
     resources :items, only: [:index, :show, :update, :destroy, :create]
